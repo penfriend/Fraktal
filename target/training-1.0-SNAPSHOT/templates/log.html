@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Log</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/log.css">
+	</head>
+	<body>
+		<div class="container">
+
+			<div id="players" class="row">
+				<div class="col-sm-6 player alert alert-info" id="player_1">Player 1</div>
+				<div class="col-sm-6 player alert alert-info" id="player_2">Player 2</div>
+			</div>
+
+			<h2 align="center" class="header">Додати подію</h1>
+			<div class="form-group row">
+				<label for="add_event" class="col-sm-3 col-form-label">Подія:</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control col-sm-12" placeholder="Введіть подію..." id="add_field">
+					<div class="right col-sm-12">
+						<button type="button" class="btn btn-outline-success btn-offset" onclick="some_function" id="add_string">Записати</button>
+					</div>
+				</div>
+			</div>
+			<hr class="style14">
+
+			<h2 align="center" class="header">Остання подія</h1>
+			<div class="center">
+				<button type="button" class="btn btn-lg btn-outline-success btn-offset col-sm-4" onclick="some_function" id="get_last">Відобразити</button>
+			</div>
+			<div class="col-sm-12 area alert alert-info" id="get_last_area"></div>
+			<hr class="style14">
+
+			<h2 align="center" class="header">Кількість подій</h1>
+			<div class="center">
+				<input type="text" class="form-control offset-sm-4 col-sm-4 center" placeholder="Кількість..." disabled="true" id="get_field">
+				<button type="button" class="btn btn-outline-success btn-offset col-sm-4" onclick="some_function" id="get_amount">Відобразити</button>
+			</div>
+			<hr class="style14">
+
+			<h2 align="center" class="header">Подія #</h1>
+			<div class="center">
+				<input type="text" class="form-control offset-sm-4 col-sm-4 center" placeholder="Введіть номер події..." id="get_event_field">
+				<button type="button" class="btn btn-outline-success btn-offset col-sm-4" onclick="some_function" id="get_event">Відобразити</button>
+			</div>
+			<div class="col-sm-12 area alert alert-info" id="get_event_area"></div>
+			<hr class="style14">
+
+			<h2 align="center" class="header">Всі події з #</h1>
+			<div class="center">
+				<input type="text" class="form-control offset-sm-4 col-sm-4 center" placeholder="З..." id="get_event_since_field">
+				<button type="button" class="btn btn-outline-success btn-offset col-sm-4" onclick="some_function" id="get_event_since">Відобразити</button>
+			</div>
+			<div class="col-sm-12 area alert alert-info" id="get_event_since_area"></div>
+			<hr class="style14">
+
+			<h2 align="center" class="header">Всі події з # до #</h1>
+			<div class="center">
+				<input type="text" class="form-control offset-sm-4 col-sm-4 center" placeholder="З..." id="get_event_from_field">
+				<input type="text" class="form-control offset-sm-4 col-sm-4 center" placeholder="До..." id="get_event_to_field">
+				<button type="button" class="btn btn-outline-success btn-offset col-sm-4" onclick="some_function" id="get_event_since_to">Відобразити</button>
+			</div>
+			<div class="col-sm-12 area alert alert-info" id="get_event_since_to_area"></div>
+			<hr class="style14">
+
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://apis.google.com/js/client.js?onload=init"></script>
+	<script type="text/javascript" src="../js/log.js"></script>
+</html>
+
+
+<!-- 
+1)	add(id, String)
+2)	takeLast(id)
+3)	amount(id)
+4)	take(id, number)
+5)	takeSince(id, number)
+6)	takeSince(id, number from, number to)
+
+-->

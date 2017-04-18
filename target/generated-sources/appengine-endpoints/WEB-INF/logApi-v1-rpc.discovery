@@ -1,0 +1,288 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/GE-K1yVB68QgyqnKCgES0nZzk-A\"",
+ "discoveryVersion": "v1",
+ "id": "logApi:v1",
+ "name": "logApi",
+ "version": "v1",
+ "description": "This is an API",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://training-165013.appspot.com/_ah/api/",
+ "rpcUrl": "https://training-165013.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "WrappedBoolean": {
+   "id": "WrappedBoolean",
+   "type": "object",
+   "properties": {
+    "success": {
+     "type": "boolean"
+    }
+   }
+  },
+  "WrappedEvents": {
+   "id": "WrappedEvents",
+   "type": "object",
+   "properties": {
+    "events": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "success": {
+     "type": "boolean"
+    }
+   }
+  },
+  "WrappedInteger": {
+   "id": "WrappedInteger",
+   "type": "object",
+   "properties": {
+    "amount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "success": {
+     "type": "boolean"
+    }
+   }
+  },
+  "WrappedLong": {
+   "id": "WrappedLong",
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  }
+ },
+ "methods": {
+  "logApi.add": {
+   "id": "logApi.add",
+   "parameters": {
+    "event": {
+     "type": "string",
+     "required": true
+    },
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "event",
+    "id"
+   ],
+   "returns": {
+    "$ref": "WrappedBoolean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "logApi.amount": {
+   "id": "logApi.amount",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "WrappedInteger"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "logApi.createLog": {
+   "id": "logApi.createLog",
+   "parameters": {
+    "player1": {
+     "type": "string",
+     "required": true
+    },
+    "player2": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "player1",
+    "player2"
+   ],
+   "returns": {
+    "$ref": "WrappedLong"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "logApi.take": {
+   "id": "logApi.take",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    },
+    "index": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "id",
+    "index"
+   ],
+   "returns": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "logApi.takeLast": {
+   "id": "logApi.takeLast",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "returns": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "logApi.takeSince": {
+   "id": "logApi.takeSince",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    },
+    "index": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "id",
+    "index"
+   ],
+   "returns": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "logApi.takeSinceTo": {
+   "id": "logApi.takeSinceTo",
+   "parameters": {
+    "from": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    },
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    },
+    "to": {
+     "type": "integer",
+     "required": true,
+     "format": "int32"
+    }
+   },
+   "parameterOrder": [
+    "from",
+    "id",
+    "to"
+   ],
+   "returns": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

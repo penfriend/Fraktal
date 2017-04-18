@@ -1,0 +1,20 @@
+h1 {
+	padding: 5px;
+	background: linear-gradient(to top, deepskyblue 0%, black 50%, deepskyblue 100%);
+	color: white !important;
+	margin: 0 !important;
+}
+
+.container {
+	margin-top: 50px;
+}
+
+.form-control-feedback {
+	display: none;
+}
+
+@media screen and (max-width: 1000px) {
+	label {
+		font-size: 13px;
+	}
+}
