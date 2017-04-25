@@ -1,0 +1,308 @@
+{
+ "kind": "discovery#restDescription",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/A5XTXcGFutnuNONK_v3s_Vj0JH8\"",
+ "discoveryVersion": "v1",
+ "id": "deckAPI:v1",
+ "name": "deckAPI",
+ "version": "v1",
+ "description": "Deck API",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rest",
+ "baseUrl": "https://deck-fr.appspot.com/_ah/api/deckAPI/v1/",
+ "basePath": "/_ah/api/deckAPI/v1/",
+ "rootUrl": "https://deck-fr.appspot.com/_ah/api/",
+ "servicePath": "deckAPI/v1/",
+ "batchPath": "batch",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "WrappedBoolean": {
+   "id": "WrappedBoolean",
+   "type": "object",
+   "properties": {
+    "success": {
+     "type": "boolean"
+    }
+   }
+  },
+  "WrappedEvents": {
+   "id": "WrappedEvents",
+   "type": "object",
+   "properties": {
+    "events": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "success": {
+     "type": "boolean"
+    }
+   }
+  },
+  "WrappedInteger": {
+   "id": "WrappedInteger",
+   "type": "object",
+   "properties": {
+    "amount": {
+     "type": "integer",
+     "format": "int32"
+    },
+    "success": {
+     "type": "boolean"
+    }
+   }
+  },
+  "WrappedLong": {
+   "id": "WrappedLong",
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "int64"
+    }
+   }
+  }
+ },
+ "methods": {
+  "cardsLeft": {
+   "id": "deckAPI.cardsLeft",
+   "path": "cardsLeft",
+   "httpMethod": "POST",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedInteger"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "createDeck": {
+   "id": "deckAPI.createDeck",
+   "path": "createDeck",
+   "httpMethod": "POST",
+   "response": {
+    "$ref": "WrappedLong"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "delete": {
+   "id": "deckAPI.delete",
+   "path": "delete",
+   "httpMethod": "POST",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "initTheDeck": {
+   "id": "deckAPI.initTheDeck",
+   "path": "initTheDeck",
+   "httpMethod": "POST",
+   "parameters": {
+    "csvCardArr": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "csvCardArr",
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "putCard": {
+   "id": "deckAPI.putCard",
+   "path": "putCard",
+   "httpMethod": "POST",
+   "parameters": {
+    "card": {
+     "type": "string",
+     "required": true,
+     "location": "query"
+    },
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "card",
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedBoolean"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "shuffle": {
+   "id": "deckAPI.shuffle",
+   "path": "shuffle",
+   "httpMethod": "POST",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "takeCard": {
+   "id": "deckAPI.takeCard",
+   "path": "takeCard",
+   "httpMethod": "POST",
+   "parameters": {
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "takeCards": {
+   "id": "deckAPI.takeCards",
+   "path": "takeCards",
+   "httpMethod": "POST",
+   "parameters": {
+    "amount": {
+     "type": "integer",
+     "required": true,
+     "format": "int32",
+     "location": "query"
+    },
+    "id": {
+     "type": "string",
+     "required": true,
+     "format": "int64",
+     "location": "query"
+    }
+   },
+   "parameterOrder": [
+    "amount",
+    "id"
+   ],
+   "response": {
+    "$ref": "WrappedEvents"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

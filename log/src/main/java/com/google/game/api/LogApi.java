@@ -21,7 +21,7 @@ import static com.google.game.objectify.OfyService.ofy;
 public class LogApi {
 	
 	@ApiMethod (name = "createLog", path = "createLog", httpMethod = HttpMethod.POST)
-	public WrappedLong createLog(@Named("player1") String player1, @Named("player2") String player2) {
+	public WrappedLong createLog() {
 		Key<Log> key = factory().allocateId(Log.class);
 		long id = key.getId();
 		

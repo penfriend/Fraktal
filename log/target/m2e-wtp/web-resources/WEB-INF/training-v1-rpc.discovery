@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/neNCnrD0fxUqNjww8pLAk94Zb3M\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/8j2WMbJhcEmUd3s2_aGsnS50jkg\"",
  "discoveryVersion": "v1",
  "id": "training:v1",
  "name": "training",
@@ -11,8 +11,8 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rpc",
- "rootUrl": "https://example-164511.appspot.com/_ah/api/",
- "rpcUrl": "https://example-164511.appspot.com/_ah/api/rpc",
+ "rootUrl": "https://training-165013.appspot.com/_ah/api/",
+ "rpcUrl": "https://training-165013.appspot.com/_ah/api/rpc",
  "rpcPath": "/_ah/api/rpc",
  "parameters": {
   "alt": {

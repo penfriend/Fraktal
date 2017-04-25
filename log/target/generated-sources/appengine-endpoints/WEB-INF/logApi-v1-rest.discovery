@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/GE-K1yVB68QgyqnKCgES0nZzk-A\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/HY7lDiNn8jrEtUzXoXcybrle6v8\"",
  "discoveryVersion": "v1",
  "id": "logApi:v1",
  "name": "logApi",
@@ -11,9 +11,9 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rest",
- "baseUrl": "https://training-165013.appspot.com/_ah/api/logApi/v1/",
+ "baseUrl": "https://deck-fr.appspot.com/_ah/api/logApi/v1/",
  "basePath": "/_ah/api/logApi/v1/",
- "rootUrl": "https://training-165013.appspot.com/_ah/api/",
+ "rootUrl": "https://deck-fr.appspot.com/_ah/api/",
  "servicePath": "logApi/v1/",
  "batchPath": "batch",
  "parameters": {
@@ -174,22 +174,6 @@
    "id": "logApi.createLog",
    "path": "createLog",
    "httpMethod": "POST",
-   "parameters": {
-    "player1": {
-     "type": "string",
-     "required": true,
-     "location": "query"
-    },
-    "player2": {
-     "type": "string",
-     "required": true,
-     "location": "query"
-    }
-   },
-   "parameterOrder": [
-    "player1",
-    "player2"
-   ],
    "response": {
     "$ref": "WrappedLong"
    },

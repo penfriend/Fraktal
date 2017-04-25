@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/neNCnrD0fxUqNjww8pLAk94Zb3M\"",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/8j2WMbJhcEmUd3s2_aGsnS50jkg\"",
  "discoveryVersion": "v1",
  "id": "training:v1",
  "name": "training",
@@ -11,9 +11,9 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rest",
- "baseUrl": "https://example-164511.appspot.com/_ah/api/training/v1/",
+ "baseUrl": "https://training-165013.appspot.com/_ah/api/training/v1/",
  "basePath": "/_ah/api/training/v1/",
- "rootUrl": "https://example-164511.appspot.com/_ah/api/",
+ "rootUrl": "https://training-165013.appspot.com/_ah/api/",
  "servicePath": "training/v1/",
  "batchPath": "batch",
  "parameters": {

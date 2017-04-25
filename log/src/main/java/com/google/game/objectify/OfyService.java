@@ -1,5 +1,6 @@
 package com.google.game.objectify;
 
+import com.google.game.domain.Deck;
 import com.google.game.domain.Log;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
@@ -14,6 +15,7 @@ public class OfyService {
      */
     static {
         factory().register(Log.class);
+        factory().register(Deck.class);
     }
 
     /**
